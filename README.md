@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/abuzzany/cfdi-sat-parser.svg?branch=master)](https://travis-ci.org/abuzzany/cfdi-sat-parser)
+[![Build Status](https://travis-ci.org/abuzzany/cfdi-sat-parser.svg?branch=master)](https://travis-ci.org/abuzzany/cfdi-sat-parser) [![Maintainability](https://api.codeclimate.com/v1/badges/1f7e1b1490feb131c8d6/maintainability)](https://codeclimate.com/github/abuzzany/cfdi-sat-parser/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/1f7e1b1490feb131c8d6/test_coverage)](https://codeclimate.com/github/abuzzany/cfdi-sat-parser/test_coverage)
 # Cfdi::Sat::Parser
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cfdi/sat/parser`. To experiment with that code, run `bin/console` for an interactive prompt.
