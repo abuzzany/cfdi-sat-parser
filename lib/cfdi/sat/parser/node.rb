@@ -24,8 +24,6 @@ module Cfdi
 
         private 
 
-        attr_reader :element
-
         # Override ruby methods.
 
         # If a method we call is missing, pass the call onto the object we
@@ -47,8 +45,6 @@ module Cfdi
         def respond_to_missing?(method)
           (attr.keys + attr_money.keys).include?(method) || super
         end
-
-        private
 
         # The next methods will be overridden in children objects and contains the
         # xml element attributes.
