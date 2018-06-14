@@ -5,7 +5,7 @@ RSpec.describe Cfdi::Sat::Parser do
     expect(Cfdi::Sat::Parser::VERSION).not_to be nil
   end
 
-  describe '#run' do
+  describe '.run' do
     it 'should returns a hash' do
       xml = 'factura patito'
       Cfdi::Sat::Parser.run(xml)
