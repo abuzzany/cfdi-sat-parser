@@ -4,7 +4,10 @@ module Cfdi
   module Sat
     module Parser
       class Node
-        attr_reader :element
+
+        def initialize(element)
+          @element = element
+        end
 
         def parse
           element_hash = {}
@@ -12,8 +15,16 @@ module Cfdi
             element_hash[key] = send(key)
           end
 
+          children.each do |child|
+            element_hash[child] = send(child)&.parse
+          end
+
           element_hash
         end
+
+        private 
+
+        attr_reader :element
 
         # Override ruby methods.
 
@@ -50,6 +61,11 @@ module Cfdi
         # Returns a hash with corresponding key-value of money type xml attributes.
         def attr_money
           {}
+        end
+
+        # This method is used for children methods that returns a Single objects.
+        def children
+          []
         end
       end
     end
