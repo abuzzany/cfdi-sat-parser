@@ -3,6 +3,8 @@
 module Cfdi
   module Sat
     module Parser
+      # Representa cada nodo del XML, contiene los métodos
+      # necesarios para hacer parsig del XML.
       class Node
         def initialize(element)
           @element = element
@@ -25,16 +27,13 @@ module Cfdi
 
         # Override ruby methods.
 
-        # If a method we call is missing, pass the call onto the object we
-        # delegate to. We use this method in order to fetch xml attributes from
-        # Nokogiri::XML::Element
         def method_missing(method, *_args)
-          # Checks the hashes to find the method
+          # Cheaca los hasehs para saber que atributo consultar
           if attr.keys.include? method
             @element.attr(attr[method])
           elsif attr_money.keys.include? method
             return if @element.attr(attr_money[method]).nil?
-            # If the method is into attr_money it coverts in cents
+            # Si el atributo es monetario, conviertelo a centavos
             (BigDecimal(@element.attr(attr_money[method])) * 100).to_i
           else
             super
@@ -45,20 +44,20 @@ module Cfdi
           (attr.keys + attr_money.keys).include?(method) || super
         end
 
-        # The next methods will be overridden in children objects and contains the
-        # xml element attributes.
+        # Los siguientes métodos seran sobreescritos en las clases
+        # hijas.
 
-        # Returns a hash with corresponding key-value of xml attributes.
+        # Para los atributos del nodo.
         def attr
           {}
         end
 
-        # Returns a hash with corresponding key-value of money type xml attributes.
+        # Para los atributos monetarios
         def attr_money
           {}
         end
 
-        # This method is used for children methods that returns a Single objects.
+        # Para los nodos hijos.
         def children
           []
         end

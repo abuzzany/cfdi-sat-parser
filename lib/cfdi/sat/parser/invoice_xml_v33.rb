@@ -3,15 +3,9 @@
 module Cfdi
   module Sat
     module Parser
-      # This class maps attributes and children elements from
-      # "TimbreFiscalDigital" element.
+      # Esta clase mapea los atributos y nodos del CFDI versión 3.3
+      # y los devuelve en forma de Hash.
       class InvoiceXmlV33 < Node
-        # This constructor receives the SAT XML as a string and initializes a
-        # Nokogiri::XML object in order to read each element and attribute.
-        # * *Arguments*    :
-        #   - sat_xml
-        # * *Returns* :
-        #   - none
         def initialize(sat_xml)
           @sat_xml = sat_xml
           @element ||= Nokogiri::XML(@sat_xml).at_xpath(
@@ -19,20 +13,17 @@ module Cfdi
           )
         end
 
-        # This method creates an IssuerXml instance in order to access each
-        # attribute and child of "Emisor" element.This element always must be
-        # present into sat xml.
-        # * *Arguments*    :
-        #   - none
-        # * *Returns* :
-        #   - IssuerXml
+        # Regresa el nodo 'Emisor' del CFDI.
         def issuer
           @issuer ||= IssuerXmlV33.new(
             @element.at_xpath("//*[local-name()='Emisor']")
           )
         end
 
-        # This method returns the exchange rate as a Float value.
+        private
+
+        # A veces el tipo de cambio no viene en el XML
+        # regresamos 1 en caso de que no venga.
         def exchange_rate
           rate = begin
                   Float(@element.attr('TipoCambio'))
@@ -43,15 +34,11 @@ module Cfdi
           1
         end
 
-        # The following methods come from the parent class InvoiceXml,
-        # and are overridden.
+        # Los siguientes métodos sobreescriben a su declaración en la clase
+        # padre Node.
 
-        # This method sets "Comprobante" attributes and return a hash with its
-        # corresponding key-value.
-        # * *Arguments*    :
-        #   - none
-        # * *Returns* :
-        #   - Hash
+        # Mapea los atributos del nodo 'Comprobante' a su correspondiente
+        # Key en ingles.
         def attr
           {
             version: 'Version',
@@ -76,13 +63,9 @@ module Cfdi
           }
         end
 
-        # This method sets "Comprobante" money attributes which are then multiplied
-        # by 100 in order to convert money value to cents in parent class
-        # (XmlNode) and are returned as a hash.
-        # * *Arguments*    :
-        #   - none
-        # * *Returns* :
-        #   - Hash
+        # Mapea los atributos del monetarios nodo 'Comprobante'
+        # a su correspondienteKey en ingles ademas de ser convertidos
+        # a centavos.
         def attr_money
           {
             subtotal_cents: 'SubTotal',
@@ -91,6 +74,8 @@ module Cfdi
           }
         end
 
+        # Mape los nodos hijos que se tiene que parsear en el nodo
+        # 'Comporbante'.
         def children
           [:issuer]
         end

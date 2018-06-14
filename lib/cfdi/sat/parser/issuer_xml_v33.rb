@@ -3,20 +3,16 @@
 module Cfdi
   module Sat
     module Parser
-      # This class maps attributes and children elements from the "Emisor"
-      # element.
+      # Esta clase mapea los atributos del nodeo 'Emisor'
+      # y los devuelve en forma de Hash.
       class IssuerXmlV33 < Node
         private
 
-        # The following methods come from the parent class InvoiceXml,
-        # and are overridden.
+        # Los siguientes métodos sobreescriben a su declaración en la clase
+        # padre Node.
 
-        # This method sets "Emisor" attributes and returns a hash with its
-        # corresponding key-value.
-        # * *Arguments*    :
-        #   - none
-        # * *Returns* :
-        #   - Hash
+        # Mapea los atributos del nodo 'Emisor' a su correspondiente
+        # Key en ingles.
         def attr
           {
             rfc: 'Rfc',
