@@ -12,8 +12,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['angelbuzany@gmail.com']
 
   spec.summary       = 'Esta gema parsea a un hash los CFDI (facturas) del SAT'
-  spec.description   = 'La idea principal de esta gema es ayudar con a los desarrolladores a parsear los CFDI'\
-                       'que estan en formato XMl a un HASH para gilizar el proceso de desarrollo.'
+  spec.description   = 'La idea principal de esta gema es parsear los CFDI (Comporbantes Fiscales Digitales) mejor'\
+                       'conocidos como Facturas del SAT que estan en formato XMl a un Hash.'
   spec.homepage      = 'https://github.com/abuzzany/cfdi-sat-parser'
   spec.license       = 'MIT'
 

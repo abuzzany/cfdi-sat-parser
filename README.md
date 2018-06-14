@@ -1,23 +1,22 @@
 [![Build Status](https://travis-ci.org/abuzzany/cfdi-sat-parser.svg?branch=master)](https://travis-ci.org/abuzzany/cfdi-sat-parser) [![Maintainability](https://api.codeclimate.com/v1/badges/1f7e1b1490feb131c8d6/maintainability)](https://codeclimate.com/github/abuzzany/cfdi-sat-parser/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/1f7e1b1490feb131c8d6/test_coverage)](https://codeclimate.com/github/abuzzany/cfdi-sat-parser/test_coverage)
 # Cfdi::Sat::Parser
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cfdi/sat/parser`. To experiment with that code, run `bin/console` for an interactive prompt.
+La idea principal de esta gema es parsear los CFDI (Comporbantes Fiscales Digitales) mejor
+conocidos como Facturas del SAT que estan en formato XMl a un Hash.
 
-TODO: Delete this and the text above, and describe your gem
+## Instalación
 
-## Installation
-
-Add this line to your application's Gemfile:
+Agrega esta linea al archivo Gemfile de tu aplicación:
 
 ```ruby
 gem 'cfdi-sat-parser'
 ```
 
-And then execute:
+Y despues ejecuta:
 
     $ bundle
 
-Or install it yourself as:
+O instalala por tu cuenta:
 
     $ gem install cfdi-sat-parser
 
