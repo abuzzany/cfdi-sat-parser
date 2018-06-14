@@ -38,6 +38,7 @@ module Cfdi
         end
 
         private
+
         # The next methods will be overridden in children objects and contains the
         # xml element attributes.
 

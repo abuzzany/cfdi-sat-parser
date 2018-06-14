@@ -22,7 +22,7 @@ module Cfdi
         # This method returns the exchange rate as a Float value.
         def exchange_rate
           rate = begin
-                  Float(@element.attr("TipoCambio"))
+                  Float(@element.attr('TipoCambio'))
                 rescue
                   nil
                 end
