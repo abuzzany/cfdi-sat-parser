@@ -3,6 +3,7 @@
 require 'cfdi/sat/parser/version'
 require 'cfdi/sat/parser/node'
 require 'cfdi/sat/parser/invoice_xml_v33'
+require 'cfdi/sat/parser/issuer_xml_v33'
 require 'nokogiri'
 require 'bigdecimal'
 

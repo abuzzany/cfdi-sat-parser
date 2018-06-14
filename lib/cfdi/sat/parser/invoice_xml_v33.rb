@@ -19,6 +19,19 @@ module Cfdi
           )
         end
 
+        # This method creates an IssuerXml instance in order to access each
+        # attribute and child of "Emisor" element.This element always must be
+        # present into sat xml.
+        # * *Arguments*    :
+        #   - none
+        # * *Returns* :
+        #   - IssuerXml
+        def issuer
+          @issuer ||= IssuerXmlV33.new(
+            @element.at_xpath("//*[local-name()='Emisor']")
+          )
+        end
+
         # This method returns the exchange rate as a Float value.
         def exchange_rate
           rate = begin
@@ -76,6 +89,10 @@ module Cfdi
             total_cents: 'Total',
             discount_cents: 'Descuento'
           }
+        end
+
+        def children
+          [:issuer]
         end
       end
     end
