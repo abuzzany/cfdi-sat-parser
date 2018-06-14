@@ -4,7 +4,6 @@ module Cfdi
   module Sat
     module Parser
       class Node
-
         def initialize(element)
           @element = element
         end
@@ -22,7 +21,7 @@ module Cfdi
           element_hash
         end
 
-        private 
+        private
 
         # Override ruby methods.
 
