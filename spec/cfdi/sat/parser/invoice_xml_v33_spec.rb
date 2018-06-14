@@ -10,7 +10,7 @@ RSpec.describe Cfdi::Sat::Parser::InvoiceXmlV33 do
   context 'cfdi 3.3' do
     describe '.parse' do
       it 'returns hash with required keys-values for "Comprobante" node' do
-        result =  sat_xml.parse
+        result = sat_xml.parse
         expect(result[:version]).to eq('3.3')
         expect(result[:certificate_number]).to eq('00000000000000000000')
         expect(result[:payment_method]).to eq('PUE')
@@ -22,6 +22,13 @@ RSpec.describe Cfdi::Sat::Parser::InvoiceXmlV33 do
         expect(result[:voucher_type]).to eq('I')
         expect(result[:total_cents]).to eq(150_000)
         expect(result[:currency]).to eq('MXN')
+      end
+
+      it 'returns hash with required keys-values for "Emisor" node' do
+        result = sat_xml.parse[:issuer]
+        expect(result[:rfc]).to eq('TEST010203001')
+        expect(result[:name]).to eq('Evasor Fiscal 1')
+        expect(result[:tax_classification]).to eq('601')
       end
     end
   end
