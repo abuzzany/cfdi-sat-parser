@@ -3,7 +3,7 @@
 module Cfdi
   module Sat
     module Parser
-      # Esta clase mapea los atributos del nodeo 'Receptor'
+      # Esta clase mapea los atributos del nodo 'Receptor'
       # y los devuelve en forma de Hash.
       class RecipientXmlV33 < Node
         private
@@ -11,7 +11,7 @@ module Cfdi
           # Los siguientes metodos sobreescriben a su declaracion en la clase
           # padre Node.
 
-          # Mapea los atributos del nodo 'Emisor' a su correspondiente
+          # Mapea los atributos del nodo 'Receptor' a su correspondiente
           # Key en ingles.
           def attr
             {

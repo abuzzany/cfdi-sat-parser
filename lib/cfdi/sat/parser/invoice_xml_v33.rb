@@ -3,7 +3,7 @@
 module Cfdi
   module Sat
     module Parser
-      # Esta clase mapea los atributos y nodos del CFDI versión 3.3
+      # Esta clase mapea los atributos y nodos del CFDI version 3.3
       # y los devuelve en forma de Hash.
       class InvoiceXmlV33 < Node
         def initialize(sat_xml)
@@ -27,6 +27,15 @@ module Cfdi
           )
         end
 
+        # Regresa el nodo 'Conceptos' del CFDI.
+        def line_items
+          @line_items ||= @element.at_xpath(
+            'cfdi:Conceptos'
+          )&.xpath('cfdi:Concepto')&.map do |line_item|
+            LineItemXmlV33.new(line_item)
+          end
+        end
+
         private
 
         # A veces el tipo de cambio no viene en el XML
@@ -41,7 +50,7 @@ module Cfdi
           1
         end
 
-        # Los siguientes métodos sobreescriben a su declaración en la clase
+        # Los siguientes metodos sobreescriben a su declaración en la clase
         # padre Node.
 
         # Mapea los atributos del nodo 'Comprobante' a su correspondiente
@@ -85,6 +94,12 @@ module Cfdi
         # 'Comporbante'.
         def children
           %i[issuer recipient]
+        end
+
+        # Mape los nodos hijos que se tiene que parsear en el nodo
+        # 'Comporbante' y que regresan un conjunto de nodos.
+        def grand_children
+          %i[line_items]
         end
       end
     end

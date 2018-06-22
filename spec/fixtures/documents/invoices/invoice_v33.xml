@@ -4,7 +4,7 @@
 <cfdi:Emisor Rfc="TEST010203001" Nombre="Evasor Fiscal 1" RegimenFiscal="601"/>
 <cfdi:Receptor Rfc="TES0302010011" Nombre="Evasor Fiscal 2" ResidenciaFiscal="MEX" NumRegIdTrib="0000000000000" UsoCFDI="G01"/>
 <cfdi:Conceptos>
-  <cfdi:Concepto ClaveProdServ="01010101" ClaveUnidad="F52" NoIdentificacion="00001" Cantidad="1.5" Unidad="TONELADA" Descripcion="ACERO" ValorUnitario="1500000" Importe="2250000">
+  <cfdi:Concepto ClaveProdServ="01010101" ClaveUnidad="F51" NoIdentificacion="00001" Cantidad="2.0" Unidad="TONELADA" Descripcion="ACERO" ValorUnitario="1500000" Importe="2250000">
     <cfdi:Impuestos>
       <cfdi:Traslados>
         <cfdi:Traslado Base="2250000" Impuesto="001" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="360000"/>
@@ -15,7 +15,7 @@
     </cfdi:Impuestos>
     <cfdi:CuentaPredial Numero="51888"/>
   </cfdi:Concepto>
-  <cfdi:Concepto ClaveProdServ="01010101" ClaveUnidad="F52" NoIdentificacion="00002" Cantidad="1.6" Unidad="TONELADA" Descripcion="ALUMINIO" ValorUnitario="1500" Importe="2400">
+  <cfdi:Concepto ClaveProdServ="01010102" ClaveUnidad="F52" NoIdentificacion="00002" Cantidad="1.5" Unidad="TONELADA" Descripcion="ALUMINIO" ValorUnitario="1500" Importe="2400">
     <cfdi:Impuestos>
       <cfdi:Traslados>
         <cfdi:Traslado Base="2400" Impuesto="001" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="384"/>
@@ -26,7 +26,7 @@
     </cfdi:Impuestos>
     <cfdi:InformacionAduanera NumeroPedimento="15  48  4567  6001234"/>
   </cfdi:Concepto>
-  <cfdi:Concepto ClaveProdServ="01010101" ClaveUnidad="F52" NoIdentificacion="00003" Cantidad="1.7" Unidad="TONELADA" Descripcion="ZAMAC" ValorUnitario="10000" Importe="17000">
+  <cfdi:Concepto ClaveProdServ="01010103" ClaveUnidad="F53" NoIdentificacion="00003" Cantidad="1.7" Unidad="TONELADA" Descripcion="ZAMAC" ValorUnitario="10000" Importe="17000">
     <cfdi:Impuestos>
       <cfdi:Traslados>
         <cfdi:Traslado Base="17000" Impuesto="001" TipoFactor="Tasa" TasaOCuota="0.530000" Importe="2720"/>

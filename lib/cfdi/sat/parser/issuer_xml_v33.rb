@@ -3,7 +3,7 @@
 module Cfdi
   module Sat
     module Parser
-      # Esta clase mapea los atributos del nodeo 'Emisor'
+      # Esta clase mapea los atributos del nodo 'Emisor'
       # y los devuelve en forma de Hash.
       class IssuerXmlV33 < Node
         private

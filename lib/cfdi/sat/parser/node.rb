@@ -20,6 +20,11 @@ module Cfdi
             element_hash[child] = send(child)&.parse
           end
 
+          grand_children.each do |child_array|
+            # Add element of children objects that returns object arrays.
+            element_hash[child_array] = send(child_array)&.map(&:parse)
+          end
+
           element_hash
         end
 
@@ -59,6 +64,11 @@ module Cfdi
 
         # Para los nodos hijos.
         def children
+          []
+        end
+
+        # Para los nodos hijos que regresan un array de nodos.
+        def grand_children
           []
         end
       end
