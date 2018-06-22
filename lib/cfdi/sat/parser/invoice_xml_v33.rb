@@ -20,6 +20,13 @@ module Cfdi
           )
         end
 
+        # Regresa el nodo 'Emisor' del CFDI.
+        def recipient
+          @recipient ||= RecipientXmlV33.new(
+            @element.at_xpath("//*[local-name()='Receptor']")
+          )
+        end
+
         private
 
         # A veces el tipo de cambio no viene en el XML
@@ -77,7 +84,7 @@ module Cfdi
         # Mape los nodos hijos que se tiene que parsear en el nodo
         # 'Comporbante'.
         def children
-          [:issuer]
+          %i[issuer recipient]
         end
       end
     end

@@ -30,6 +30,15 @@ RSpec.describe Cfdi::Sat::Parser::InvoiceXmlV33 do
         expect(result[:name]).to eq('Evasor Fiscal 1')
         expect(result[:tax_classification]).to eq('601')
       end
+
+      it 'returns hash with required keys-values for "Receptor" node' do
+        result = sat_xml.parse[:recipient]
+        expect(result[:rfc]).to eq('TES0302010011')
+        expect(result[:name]).to eq('Evasor Fiscal 2')
+        expect(result[:tax_residency]).to eq('MEX')
+        expect(result[:entity_register_id]).to eq('0000000000000')
+        expect(result[:cfdi_usage]).to eq('G01')
+      end
     end
   end
 end

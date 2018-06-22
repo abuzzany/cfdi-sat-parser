@@ -8,7 +8,7 @@ module Cfdi
       class IssuerXmlV33 < Node
         private
 
-        # Los siguientes métodos sobreescriben a su declaración en la clase
+        # Los siguientes metodos sobreescriben a su declaracion en la clase
         # padre Node.
 
         # Mapea los atributos del nodo 'Emisor' a su correspondiente
