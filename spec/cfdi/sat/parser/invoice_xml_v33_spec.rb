@@ -87,7 +87,7 @@ RSpec.describe Cfdi::Sat::Parser::InvoiceXmlV33 do
         expect(third_line_item).to be_eql(expected_third_line_item)
       end
 
-      it 'returns an hash with required keys-values for "Complemento" node' do
+      it 'returns an hash with required keys-values for "TimbreFiscalDigital" node' do
         result = sat_xml.parse[:digital_tax_stamp]
         expect(result[:version]).to eq('1.1')
         expect(result[:uuid]).to eq('2303A234-B06C-4945-89ED-0DC2CDB31169')
