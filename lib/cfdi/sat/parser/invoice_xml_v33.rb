@@ -32,7 +32,7 @@ module Cfdi
           @line_items ||= @element.at_xpath(
             'cfdi:Conceptos'
           )&.xpath('cfdi:Concepto')&.map do |line_item|
-            LineItemXmlV33.new(line_item)
+            LineItems::LineItemXmlV33.new(line_item)
           end
         end
 
