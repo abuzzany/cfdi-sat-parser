@@ -6,6 +6,7 @@ require 'cfdi/sat/parser/invoice_xml_v33'
 require 'cfdi/sat/parser/issuer_xml_v33'
 require 'cfdi/sat/parser/recipient_xml_v33'
 require 'cfdi/sat/parser/line_item_xml_v33'
+require 'cfdi/sat/parser/digital_tax_stamp_xml_v33'
 require 'nokogiri'
 require 'bigdecimal'
 

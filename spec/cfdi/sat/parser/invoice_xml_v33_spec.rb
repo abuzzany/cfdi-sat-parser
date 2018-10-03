@@ -24,14 +24,14 @@ RSpec.describe Cfdi::Sat::Parser::InvoiceXmlV33 do
         expect(result[:currency]).to eq('MXN')
       end
 
-      it 'returns hash with required keys-values for "Emisor" node' do
+      it 'returns an hash with required keys-values for "Emisor" node' do
         result = sat_xml.parse[:issuer]
         expect(result[:rfc]).to eq('TEST010203001')
         expect(result[:name]).to eq('Evasor Fiscal 1')
         expect(result[:tax_classification]).to eq('601')
       end
 
-      it 'returns hash with required keys-values for "Receptor" node' do
+      it 'returns an hash with required keys-values for "Receptor" node' do
         result = sat_xml.parse[:recipient]
         expect(result[:rfc]).to eq('TES0302010011')
         expect(result[:name]).to eq('Evasor Fiscal 2')
@@ -40,7 +40,7 @@ RSpec.describe Cfdi::Sat::Parser::InvoiceXmlV33 do
         expect(result[:cfdi_usage]).to eq('G01')
       end
 
-      it 'returns hash with required keys-values for "Conceptos" node' do
+      it 'returns an hash with required keys-values for "Conceptos" node' do
         result = sat_xml.parse[:line_items]
         expect(result.count).to be_eql(3)
 
@@ -85,6 +85,16 @@ RSpec.describe Cfdi::Sat::Parser::InvoiceXmlV33 do
                                      discount_cents: nil }
 
         expect(third_line_item).to be_eql(expected_third_line_item)
+      end
+
+      it 'returns an hash with required keys-values for "Complemento" node' do
+        result = sat_xml.parse[:digital_tax_stamp]
+        expect(result[:version]).to eq('1.1')
+        expect(result[:uuid]).to eq('2303A234-B06C-4945-89ED-0DC2CDB31169')
+        expect(result[:issue_date]).to eq('2017-01-05T12:39:21')
+        expect(result[:certified_sat_number]).to eq('00000000000000000000')
+        expect(result[:cfd_reference]).to eq('AAAAABBBBB00000')
+        expect(result[:sat_reference]).to eq('CCCCCCDDDDDD111111')
       end
     end
   end

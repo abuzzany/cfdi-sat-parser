@@ -36,6 +36,16 @@ module Cfdi
           end
         end
 
+        # Regresa el nodo 'Complemento#TimbreFiscalDigital' del CFDI.
+        def digital_tax_stamp
+          @digital_tax_stamp ||= @element.at_xpath(
+            "//*[local-name()='Complemento']"
+          )&.at_xpath("//*[local-name()='TimbreFiscalDigital']")
+
+          return if @digital_tax_stamp.nil?
+          DigitalTaxStampXmlV33.new(@digital_tax_stamp)
+        end
+
         private
 
         # A veces el tipo de cambio no viene en el XML
@@ -93,7 +103,7 @@ module Cfdi
         # Mape los nodos hijos que se tiene que parsear en el nodo
         # 'Comporbante'.
         def children
-          %i[issuer recipient]
+          %i[issuer recipient digital_tax_stamp]
         end
 
         # Mape los nodos hijos que se tiene que parsear en el nodo
