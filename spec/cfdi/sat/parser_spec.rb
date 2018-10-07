@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-RSpec.describe Cfdi::Sat::Parser do
+RSpec.describe CfdiSat::V33::Parser do
   it 'has a version number' do
-    expect(Cfdi::Sat::Parser::VERSION).not_to be nil
+    expect(CfdiSat::VERSION).not_to be nil
   end
 
   describe '.run' do
     it 'should returns a hash' do
       xml = 'factura patito'
-      Cfdi::Sat::Parser.run(xml)
+      CfdiSat::V33::Parser.run(xml)
     end
   end
 end

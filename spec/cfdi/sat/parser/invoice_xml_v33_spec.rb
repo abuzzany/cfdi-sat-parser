@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Cfdi::Sat::Parser::InvoiceXmlV33 do
+RSpec.describe CfdiSat::V33::InvoiceXml do
   def sat_xml
-    Cfdi::Sat::Parser::InvoiceXmlV33.new(
+    CfdiSat::V33::InvoiceXml.new(
       File.read('spec/fixtures/documents/invoices/invoice_v33.xml')
     )
   end

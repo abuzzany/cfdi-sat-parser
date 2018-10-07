@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'cfdi/sat/parser'
+require 'cfdi_sat/version'
 require 'cfdi_sat/v33/parser'
 require 'simplecov'
 

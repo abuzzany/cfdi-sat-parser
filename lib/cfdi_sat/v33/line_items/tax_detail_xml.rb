@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module Cfdi
-  module Sat
-    module Parser
+module CfdiSat
+  module V33
+    module LineIntems
       # Esta clase mapea los atributos del nodo 'Concepto#Impuestos'
       # y los devuelve en forma de Hash.
       class TaxDetailXml
