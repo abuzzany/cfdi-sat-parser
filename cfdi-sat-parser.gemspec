@@ -3,11 +3,11 @@
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'cfdi/sat/parser/version'
+require 'cfdi_sat/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'cfdi-sat-parser'
-  spec.version       = Cfdi::Sat::Parser::VERSION
+  spec.version       = CfdiSat::VERSION
   spec.authors       = ['Angel Buzany']
   spec.email         = ['angelbuzany@gmail.com']
 
