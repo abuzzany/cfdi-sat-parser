@@ -13,7 +13,7 @@ RSpec.describe CfdiSat::V33::IssuerXml do
 
   context 'cfdi 3.3' do
     describe '.parse' do
-      it 'returns an hash with required keys-values for "Emisor" node' do        
+      it 'returns an hash with required keys-values for "Emisor" node' do
         result = issuer_xml.parse
         expect(result[:rfc]).to eq('TEST010203001')
         expect(result[:name]).to eq('Evasor Fiscal 1')
