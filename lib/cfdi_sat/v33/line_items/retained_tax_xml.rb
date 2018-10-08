@@ -12,7 +12,7 @@ module CfdiSat
         # Los siguientes metodos sobreescriben a su declaracion en la clase
         # padre Node.
 
-        # Mapea los atributos del nodo 'Retencio' a su correspondiente
+        # Mapea los atributos del nodo 'Retencion' a su correspondiente
         # Key en ingles.
         def attr
           {
