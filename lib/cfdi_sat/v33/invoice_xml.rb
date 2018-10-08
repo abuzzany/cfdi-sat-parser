@@ -42,7 +42,7 @@ module CfdiSat
         )
 
         return if @tax_detail.nil?
-        TaxDetailXmlnew(@tax_detail)
+        TaxDetailXml.new(@tax_detail)
       end
 
       # Regresa el nodo 'Complemento#TimbreFiscalDigital' del CFDI.
@@ -112,7 +112,7 @@ module CfdiSat
       # Mapea los nodos hijos que se tiene que parsear en el nodo
       # 'Comprobante'.
       def children
-        %i[issuer recipient digital_tax_stamp]
+        %i[issuer recipient tax_detail digital_tax_stamp]
       end
 
       # Mapea los nodos hijos que se tiene que parsear en el nodo

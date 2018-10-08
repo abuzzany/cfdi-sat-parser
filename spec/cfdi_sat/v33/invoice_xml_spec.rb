@@ -87,6 +87,12 @@ RSpec.describe CfdiSat::V33::InvoiceXml do
         expect(third_line_item).to be_eql(expected_third_line_item)
       end
 
+      it 'returns an hash with required keys-values for "Impuestos" node' do
+        result = sat_xml.parse[:tax_detail]
+        expect(result[:retained_taxes_total_cents]).to eq(24_750_000)
+        expect(result[:transferred_taxes_total_cents]).to eq(36_000_000)
+      end
+
       it 'returns an hash with required keys-values for "TimbreFiscalDigital" node' do
         result = sat_xml.parse[:digital_tax_stamp]
         expect(result[:version]).to eq('1.1')
