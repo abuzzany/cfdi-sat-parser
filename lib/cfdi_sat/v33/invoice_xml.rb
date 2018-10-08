@@ -99,14 +99,14 @@ module CfdiSat
         }
       end
 
-      # Mape los nodos hijos que se tiene que parsear en el nodo
-      # 'Comporbante'.
+      # Mapea los nodos hijos que se tiene que parsear en el nodo
+      # 'Comprobante'.
       def children
         %i[issuer recipient digital_tax_stamp]
       end
 
-      # Mape los nodos hijos que se tiene que parsear en el nodo
-      # 'Comporbante' y que regresan un conjunto de nodos.
+      # Mapea los nodos hijos que se tiene que parsear en el nodo
+      # 'Comprobante' y que regresan un conjunto de nodos.
       def grand_children
         %i[line_items]
       end
