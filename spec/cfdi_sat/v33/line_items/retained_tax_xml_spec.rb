@@ -23,7 +23,7 @@ RSpec.describe CfdiSat::V33::LineIntems::RetainedTaxXml do
 
   context 'cfdi 3.3' do
     describe '.parse' do
-      it 'returns an hash with required keys-values for "Conceptos" node' do
+      it 'returns an hash with required keys-values for "Retencion" node' do
         result = retained_tax.parse
 
         expect(result[:tax_name]).to eq('002')
