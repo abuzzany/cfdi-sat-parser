@@ -11,7 +11,7 @@ module CfdiSat
           @retained_taxes ||= @element.xpath(
             'cfdi:Retenciones'
           )&.xpath('cfdi:Retencion')&.map do |retained_tax|
-            RetainedTaxXmlV33.new(retained_tax)
+            RetainedTaxXml.new(retained_tax)
           end
         end
 
@@ -20,7 +20,7 @@ module CfdiSat
           @transferred_taxes ||= @element.xpath(
             'cfdi:Traslados'
           )&.xpath('cfdi:Traslado')&.map do |transferred_tax|
-            TransferredTaxXmlV33.new(transferred_tax)
+            TransferredTaxXml.new(transferred_tax)
           end
         end
 
