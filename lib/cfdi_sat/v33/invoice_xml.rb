@@ -35,12 +35,12 @@ module CfdiSat
         end
       end
 
-      # Regresa el nodo 'Impuesto' del CFDI.
+      # Regresa el nodo 'Impuestos' del CFDI.
       def tax_detail
         @tax_detail ||= @element.at_xpath(
           "//*[local-name()='Comprobante']/*[local-name() = 'Impuestos']"
         )
-  
+
         return if @tax_detail.nil?
         TaxDetailXmlnew(@tax_detail)
       end
