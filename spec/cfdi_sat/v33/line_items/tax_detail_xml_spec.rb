@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe CfdiSat::V33::LineIntems::TaxDetailXml do
-  def tax_detaiil
+  def tax_detail
     sat_xml = File.read('spec/fixtures/documents/invoices/invoice_v33.xml')
 
     CfdiSat::V33::LineIntems::TaxDetailXml.new(
@@ -19,8 +19,8 @@ RSpec.describe CfdiSat::V33::LineIntems::TaxDetailXml do
 
   context 'cfdi 3.3' do
     describe '.parse' do
-      it 'returns an hash with required keys-values for "Conceptos" node' do
-        result = tax_detaiil.parse
+      it 'returns an hash with required keys-values for "Impuestos" node' do
+        result = tax_detail.parse
       end
     end
   end

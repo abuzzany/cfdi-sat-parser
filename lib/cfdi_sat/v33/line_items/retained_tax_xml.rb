@@ -24,7 +24,7 @@ module CfdiSat
         end
 
         # Mapea los atributos del monetarios nodo 'Retencion'
-        # a su correspondienteKey en ingles ademas de ser convertidos
+        # a su correspondienteKey en ingles ademas de ser convertidos.
         def attr_money
           { amount_cents: 'Importe' }
         end
