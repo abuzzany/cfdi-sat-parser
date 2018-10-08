@@ -35,6 +35,16 @@ module CfdiSat
         end
       end
 
+      # Regresa el nodo 'Impuesto' del CFDI.
+      def tax_detail
+        @tax_detail ||= @element.at_xpath(
+          "//*[local-name()='Comprobante']/*[local-name() = 'Impuestos']"
+        )
+  
+        return if @tax_detail.nil?
+        TaxDetailXmlnew(@tax_detail)
+      end
+
       # Regresa el nodo 'Complemento#TimbreFiscalDigital' del CFDI.
       def digital_tax_stamp
         @digital_tax_stamp ||= @element.at_xpath(
