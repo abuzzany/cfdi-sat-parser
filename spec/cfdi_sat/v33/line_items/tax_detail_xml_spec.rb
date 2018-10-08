@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'pry'
-
 RSpec.describe CfdiSat::V33::LineIntems::TaxDetailXml do
   def tax_detaiil
     sat_xml = File.read('spec/fixtures/documents/invoices/invoice_v33.xml')
