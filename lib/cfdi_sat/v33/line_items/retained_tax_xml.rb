@@ -6,7 +6,7 @@ module CfdiSat
       # Esta clase mapea los atributos del nodo
       # 'Concepto#Impuestos#Retenciones#Retencion' y los devuelve en forma
       # de Hash.
-      class RetainedTaxXml < CfdiSat::V33::Node
+      class RetainedTaxXml < CfdiSat::V33::BaseRetainedTaxXml
         private
 
         # Los siguientes metodos sobreescriben a su declaracion en la clase
@@ -15,18 +15,11 @@ module CfdiSat
         # Mapea los atributos del nodo 'Retencion' a su correspondiente
         # Key en ingles.
         def attr
-          {
-            tax_name: 'Impuesto',
+          super.merge(
             rate: 'TasaOCuota',
             factory_type: 'TipoFactor',
             base: 'Base'
-          }
-        end
-
-        # Mapea los atributos del monetarios nodo 'Retencion'
-        # a su correspondienteKey en ingles ademas de ser convertidos.
-        def attr_money
-          { amount_cents: 'Importe' }
+          )
         end
       end
     end
