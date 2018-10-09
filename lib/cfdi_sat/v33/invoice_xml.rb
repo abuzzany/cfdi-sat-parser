@@ -45,6 +45,16 @@ module CfdiSat
         TaxDetailXml.new(@tax_detail)
       end
 
+      # Regresa el nodo 'Complemento#Nomina' del CFDI.
+      def payroll
+        @payroll ||= @element.at_xpath(
+          "//*[local-name()='Complemento']"
+        )&.at_xpath("//*[local-name()='Nomina']")
+
+        return if @payroll.nil?
+        Complements::PayrollXml.new(@payroll)
+      end
+
       # Regresa el nodo 'Complemento#TimbreFiscalDigital' del CFDI.
       def digital_tax_stamp
         @digital_tax_stamp ||= @element.at_xpath(
