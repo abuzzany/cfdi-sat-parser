@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:nomina12="http://www.sat.gob.mx/nomina12" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd http://www.sat.gob.mx/nomina12 http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina12.xsd" version="3.2" serie="NOMINA" folio="4729" fecha="2017-04-18T07:01:47" formaDePago="En una sola exhibición" subTotal="2155.12" descuento="355.17" Moneda="MXN" total="1799.95" tipoDeComprobante="egreso" metodoDePago="NA" LugarExpedicion="72765">
+   <cfdi:Emisor rfc="ACO560518KW7" nombre="TRANSFORMACION PUEBLA SA DE CV">
+      <cfdi:RegimenFiscal Regimen="601" />
+   </cfdi:Emisor>
+   <cfdi:Receptor rfc="TEST010203AL3" nombre="JOSE FCO. GERARDO LOPEZ MORALES" />
+   <cfdi:Conceptos>
+      <cfdi:Concepto cantidad="1" unidad="ACT" descripcion="Pago de nómina" valorUnitario="2155.12" importe="2155.12" />
+   </cfdi:Conceptos>
+   <cfdi:Impuestos />
+   <cfdi:Complemento>
+      <nomina12:Nomina FechaFinalPago="2017-01-01" FechaInicialPago="2016-12-26" FechaPago="2017-01-04" NumDiasPagados="7.000" TipoNomina="O" TotalDeducciones="355.17" TotalPercepciones="2155.12" Version="1.2">
+         <nomina12:Emisor RegistroPatronal="E1411078100" />
+         <nomina12:Receptor Antigüedad="P990W" Banco="012" ClaveEntFed="PUE" CuentaBancaria="1133313719" Curp="LOMF560604HPLPRR00" Departamento="VENTAS" FechaInicioRelLaboral="1998-01-12" NumEmpleado="7" NumSeguridadSocial="62735621336" PeriodicidadPago="02" Puesto="COORDINADOR DE EMBARQUES" RiesgoPuesto="5" SalarioBaseCotApor="308.09" SalarioDiarioIntegrado="308.09" Sindicalizado="No" TipoContrato="01" TipoJornada="01" TipoRegimen="02" />
+         <nomina12:Percepciones TotalExento="107.83" TotalGravado="2047.29" TotalSueldos="2155.12">
+            <nomina12:Percepcion Clave="P001" Concepto="SUELDO" ImporteExento="0.00" ImporteGravado="2047.29" TipoPercepcion="001" />
+            <nomina12:Percepcion Clave="P006" Concepto="FONDO DE AHORRO PATRON" ImporteExento="107.83" ImporteGravado="0.00" TipoPercepcion="005" />
+         </nomina12:Percepciones>
+         <nomina12:Deducciones TotalImpuestosRetenidos="193.63" TotalOtrasDeducciones="161.54">
+            <nomina12:Deduccion Clave="D001" Concepto="ISR" Importe="193.63" TipoDeduccion="002" />
+            <nomina12:Deduccion Clave="D002" Concepto="IMSS" Importe="53.71" TipoDeduccion="001" />
+            <nomina12:Deduccion Clave="D005" Concepto="FONDO DE AHORRO" Importe="107.83" TipoDeduccion="004" />
+         </nomina12:Deducciones>
+      </nomina12:Nomina>
+      <tfd:TimbreFiscalDigital FechaTimbrado="2015-02-23T21:03:00" UUID="EDB39644-F9F9-483A-883B-660279D782B9" noCertificadoSAT="00001000000301927035"
+        selloCFD="jKWe0xQUQXKt/cgs9ni8yoQdNorY0+8iPhJbEN7Y/PynBBorwJGECuixLUvVwXrSd241LNGiG8ng3TiqJ5zvi5x4EJTxdedJLsaSDrV547Ezp1sXPcXNxDeK/ZRIGAyXssSDiLZlSi14khzs6ZYrZV/tjcX4sMI0bPrdwC8WRK0=" selloSAT="sxIOdWbRKA4Ck8fZR27892LjBWdHANjPVYx1EKmUvnv86E4yObDNWlmiZuDXxSAPHlb5ja+GKNlkx4H4uWN3vIPDAr1ySngLpt5078mgaJeBJVfmpoFyH1hIC56BDdrUF1OPbRIKXc0VIux0dZSowckNCmlJLUw2G9NZuCRwLoc=" version="1.0" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd"
+        xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" />
+   </cfdi:Complemento>
+</cfdi:Comprobante>
