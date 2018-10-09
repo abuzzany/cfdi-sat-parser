@@ -5,7 +5,7 @@ module CfdiSat
     # Esta clase mapea los atributos del nodo
     # 'Comprobante#Impuestos#Retenciones#Retencion' y los devuelve en forma
     # de Hash.
-    class RetainedTaxXml < CfdiSat::V33::BaseRetainedTaxXml
+    class RetainedTaxXml < BaseRetainedTaxXml
     end
   end
 end
