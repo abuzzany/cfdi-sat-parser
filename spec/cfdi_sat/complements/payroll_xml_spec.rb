@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-RSpec.describe CfdiSat::V33::Complements::PayrollXml do
+RSpec.describe CfdiSat::Complements::PayrollXml do
   def payroll
     sat_xml = File.read('spec/fixtures/documents/invoices/payroll_v12.xml')
 
-    CfdiSat::V33::Complements::PayrollXml.new(
+    CfdiSat::Complements::PayrollXml.new(
       Nokogiri::XML(sat_xml).at_xpath(
         "//*[local-name()='Comprobante']"
       ).at_xpath(
