@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
-require 'bundler/setup'
-require 'cfdi_sat/version'
-require 'cfdi_sat/v33/parser'
 require 'simplecov'
+SimpleCov.start do
+  add_filter 'spec'
+end
 
-SimpleCov.start
+require 'bundler/setup'
+require 'cfdi_sat/cfdi_sat'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
