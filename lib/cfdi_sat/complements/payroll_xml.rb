@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'cfdi_sat/v33/node'
 
 module CfdiSat
